@@ -1,0 +1,136 @@
+/* ===== GLOBAL STYLES ===== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    /* Body को content navbar मुनि सुरु हुन्छ */
+      padding-top: 0 !important;
+}
+/* Navbar सधैं माथि रहन्छ — overlap हुँदैन! */
+.navbar {
+    position: sticky !important;
+    top: 0;
+    z-index: 1030;
+}
+
+
+
+/* ===== NAVBAR ===== */
+.navbar-brand {
+    letter-spacing: 1px;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    padding: 80px 0;
+}
+
+/* ===== PRODUCT CARD ===== */
+.product-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Hover effect — mouse राख्दा card उठ्छ */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Product Image */
+.product-card img {
+    height: 200px;
+    object-fit: cover;  /* Image crop गर्छ, stretch हुँदैन */
+    width: 100%;
+}
+
+/* Product Image छैन भने placeholder */
+.product-img-placeholder {
+    height: 200px;
+    background: linear-gradient(135deg, #667eea20, #764ba220);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+}
+
+/* Price Style */
+.product-price {
+    color: #e44d26;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Stock Badge */
+.stock-badge {
+    font-size: 0.75rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn-add-cart {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: opacity 0.3s;
+}
+
+.btn-add-cart:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+/* ===== CATEGORY BUTTONS ===== */
+.active-cat {
+    background-color: #343a40 !important;
+    color: white !important;
+}
+
+/* ===== LOADING ===== */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+
+/* ===== Footer Styling ===== */
+
+.footer-link {
+    color: #bbb;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+    transition: all 0.3s;
+}
+
+.footer-link:hover {
+    color: #fff;
+    transform: translateX(3px);
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    background: #1a1d1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #bbb;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    background: #ffc107;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: auto;
+}

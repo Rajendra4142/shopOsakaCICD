@@ -1,0 +1,33 @@
+package com.shopOsaka.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import java.math.BigDecimal;
+
+@Data
+@Entity
+@Table(name = "order_items")
+public class OrderItem {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    // कुन Order को item हो
+    @ManyToOne
+    @JoinColumn(name = "order_id", nullable = false)
+    private Order order;
+
+    // कुन Product हो
+    @ManyToOne
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
+
+    @Column(nullable = false)
+    private Integer quantity;       // कति वटा किनेको
+
+    @Column(nullable = false)
+    private BigDecimal price;       // त्यो बेलाको price
+                                    // (पछि price बदलिए पनि
+                                    // order को price same रहन्छ!)
+}
