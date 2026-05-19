@@ -5,6 +5,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
+import com.shopOsaka.service.EmailService;
+
 
 @SpringBootTest(properties = {
 	    "spring.datasource.url=jdbc:h2:mem:testdb",
@@ -15,7 +17,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 class ShopOsakaApplicationTests {
 	
 	@MockitoBean
-    private JavaMailSender javaMailSender;
+	private EmailService emailService;
 
 	@Test
 	void contextLoads() {
