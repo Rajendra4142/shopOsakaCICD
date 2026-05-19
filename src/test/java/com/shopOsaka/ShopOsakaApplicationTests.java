@@ -2,6 +2,7 @@ package com.shopOsaka;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.mail.javamail.JavaMailSender;
 
 @SpringBootTest(properties = {
 	    "spring.datasource.url=jdbc:h2:mem:testdb",
@@ -14,5 +15,7 @@ class ShopOsakaApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+	@MockBean
+    private JavaMailSender javaMailSender;
 
 }
