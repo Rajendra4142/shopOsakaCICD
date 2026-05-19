@@ -2,10 +2,11 @@ package com.shopOsaka;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.mail.javamail.JavaMailSender;
+
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
-import com.shopOsaka.service.EmailService;
+
+import com.shopOsaka.service.OtpService;
 
 
 @SpringBootTest(properties = {
@@ -17,7 +18,7 @@ import com.shopOsaka.service.EmailService;
 class ShopOsakaApplicationTests {
 	
 	@MockitoBean
-	private EmailService emailService;
+	private OtpService otpService;
 
 	@Test
 	void contextLoads() {
