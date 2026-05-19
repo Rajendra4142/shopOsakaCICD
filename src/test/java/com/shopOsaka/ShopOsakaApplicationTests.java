@@ -3,6 +3,8 @@ package com.shopOsaka;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
+
 
 @SpringBootTest(properties = {
 	    "spring.datasource.url=jdbc:h2:mem:testdb",
@@ -11,11 +13,13 @@ import org.springframework.mail.javamail.JavaMailSender;
 	    "spring.jpa.hibernate.ddl-auto=create-drop"
 	})
 class ShopOsakaApplicationTests {
+	
+	@MockitoBean
+    private JavaMailSender javaMailSender;
 
 	@Test
 	void contextLoads() {
 	}
-	@MockBean
-    private JavaMailSender javaMailSender;
+	
 
 }
