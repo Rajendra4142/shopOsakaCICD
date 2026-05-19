@@ -5,8 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
-
-import com.shopOsaka.service.OtpService;
+import com.shopOsaka.service.EmailService;
 
 
 @SpringBootTest(properties = {
@@ -18,7 +17,7 @@ import com.shopOsaka.service.OtpService;
 class ShopOsakaApplicationTests {
 	
 	@MockitoBean
-	private OtpService otpService;
+	private EmailService emailService;
 
 	@Test
 	void contextLoads() {
