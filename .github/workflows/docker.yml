@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build Push and Deploy
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  docker:
+  deploy:
 
     runs-on: ubuntu-latest
 
@@ -25,7 +25,7 @@ jobs:
       - name: Build JAR
         run: mvn clean package
 
-      - name: Login to Docker Hub
+      - name: Login Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -36,3 +36,16 @@ jobs:
 
       - name: Push Docker Image
         run: docker push rajendra4142/shoposaka:latest
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+
+          script: |
+            cd shoposaka
+            docker compose pull
+            docker compose down
+            docker compose up -d
